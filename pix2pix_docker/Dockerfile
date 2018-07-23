@@ -45,5 +45,9 @@ RUN pip3 install -r /pix2pix/requirements.txt
 # Go to pix2pix root
 WORKDIR /pix2pix
 
+<<<<<<< HEAD
 CMD ["python3", "pix2pix.py"]
 
+=======
+CMD ["python3", "pix2pix"]
+>>>>>>> 56236728dab772046e7a5f0a49eb581f0612d159
