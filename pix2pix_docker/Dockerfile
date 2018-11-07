@@ -31,7 +31,10 @@ RUN apt-get update -qq \
 RUN pip3 install --upgrade pip
 
 # install Keras
-RUN pip3 install keras
+RUN pip3 install keras==2.2.0
+
+RUN pip3 install opencv-python
+RUN pip3 install pathlib
 
 # manually update numpy
 RUN pip3 --no-cache-dir install -U numpy==1.13.3
@@ -45,9 +48,4 @@ RUN pip3 install -r /pix2pix/requirements.txt
 # Go to pix2pix root
 WORKDIR /pix2pix
 
-<<<<<<< HEAD
-CMD ["python3", "pix2pix.py"]
-
-=======
-CMD ["python3", "pix2pix"]
->>>>>>> 56236728dab772046e7a5f0a49eb581f0612d159
+#CMD ["python3", "pix2pix.py"]
