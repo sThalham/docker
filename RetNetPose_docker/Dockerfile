@@ -45,9 +45,3 @@ RUN git clone https://github.com/sThalham/RetNetPose.git /RetNetPose
 # Go to pix2pix root
 WORKDIR /RetNetPose
 
-<<<<<<< HEAD
-CMD ["python3", "pix2pix.py"]
-
-=======
-CMD ["python3", "pix2pix"]
->>>>>>> 56236728dab772046e7a5f0a49eb581f0612d159
