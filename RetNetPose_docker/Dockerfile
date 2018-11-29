@@ -37,11 +37,11 @@ RUN pip3 install keras
 RUN pip3 --no-cache-dir install -U numpy==1.13.3
 
 # Clone the Detectron repository
-RUN git clone https://github.com/sThalham/RetNetPose.git /RetNetPose
+RUN git clone https://github.com/sThalham/EagleEye.git /eagleeye
 
 # Install Python dependencies
 #RUN pip3 install -r /pix2pix/requirements.txt
 
 # Go to pix2pix root
-WORKDIR /RetNetPose
+WORKDIR /eagleeye
 
