@@ -1,5 +1,6 @@
 # tensorflow
-FROM tensorflow/tensorflow:latest-gpu-py3
+#FROM tensorflow/tensorflow:latest-gpu-py3
+FROM tensorflow/tensorflow:1.12.0-gpu-py3
 
 RUN apt-get update -qq \
  && apt-get install --no-install-recommends -y \
@@ -28,20 +29,19 @@ RUN apt-get update -qq \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install --upgrade pip
+RUN pip install --upgrade pip
 
 # install Keras
-RUN pip3 install keras
+RUN pip install keras==2.2.4
+RUN pip install opencv-python
+RUN pip install progressbar2
+RUN pip install keras-resnet
+RUN pip install cython
+RUN pip install pycocotools
 
-# manually update numpy
-RUN pip3 --no-cache-dir install -U numpy==1.13.3
-
-# Clone the Detectron repository
 RUN git clone https://github.com/sThalham/EagleEye.git /eagleeye
-
-# Install Python dependencies
-#RUN pip3 install -r /pix2pix/requirements.txt
 
 # Go to pix2pix root
 WORKDIR /eagleeye
 
+#CMD ["python3", "RetinaNetPose/bin/train_vanilla.py", "--no-evaluation", "coco", "data/retnet_test"]
