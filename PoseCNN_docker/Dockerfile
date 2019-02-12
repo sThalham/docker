@@ -1,6 +1,6 @@
 # tensorflow
-#FROM tensorflow/tensorflow:latest-gpu-py3
-FROM tensorflow/tensorflow:1.9.0-gpu-py3
+FROM tensorflow/tensorflow:latest-gpu-py3
+#FROM tensorflow/tensorflow:1.9.0-gpu-py3
 
 RUN apt-get update -qq \
  && apt-get install --no-install-recommends -y \
@@ -32,18 +32,19 @@ RUN apt-get update -qq \
 RUN pip install --upgrade pip
 
 # install Keras
-RUN pip3 install keras
-RUN pip3 install opencv-python
-RUN pip3 install progressbar2
-RUN pip3 install keras-resnet
-RUN pip3 install cython
-RUN pip3 install pycocotools
-RUN pip3 install pillow
-RUN python3 -m pip install matplotlib
+#RUN pip3 install keras
+#RUN pip3 install opencv-python
+#RUN pip3 install progressbar2
+#RUN pip3 install keras-resnet
+#RUN pip3 install cython
+#RUN pip3 install pycocotools
+#RUN pip3 install pillow
+#RUN python3 -m pip install matplotlib
 
-RUN git clone https://github.com/sThalham/EagleEye.git /eagleeye
+RUN git clone https://github.com/yuxng/PoseCNN.git /posecnn
 
 # Go to pix2pix root
-WORKDIR /eagleeye
+WORKDIR /posecnn/lib
+CMD["sh", "make.sh"]
 
 #CMD ["python3", "RetinaNetPose/bin/train_vanilla.py", "--no-evaluation", "coco", "data/retnet_test"]
