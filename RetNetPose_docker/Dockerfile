@@ -46,4 +46,4 @@ RUN git clone https://github.com/sThalham/EagleEye.git /eagleeye
 # Go to pix2pix root
 WORKDIR /eagleeye
 
-#CMD ["python3", "RetinaNetPose/bin/train_vanilla.py", "--no-evaluation", "coco", "data/retnet_test"]
+#CMD ["python3", "RetinaNetPose/bin/train.py", "linemod", "data/linemod_3Dboxes"]
