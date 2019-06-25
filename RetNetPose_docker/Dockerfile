@@ -49,4 +49,6 @@ RUN git clone https://github.com/sThalham/RetNetPose.git /RetNetPose
 # Go to pix2pix root
 WORKDIR /RetNetPose
 
-#CMD ["python3", "RetinaNetPose/bin/train.py", "linemod", "data/linemod_3Dboxes"]
+#RUN git checkout 00de3d7c5871ad190be5d0407c7ef89ba44c88a8
+
+#CMD ["python3", "RetinaNetPose/bin/train.py", "linemod", "data"]
