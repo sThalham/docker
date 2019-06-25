@@ -1,6 +1,5 @@
 # tensorflow
-#FROM tensorflow/tensorflow:latest-gpu-py3
-FROM tensorflow/tensorflow:1.9.0-gpu-py3
+FROM tensorflow/tensorflow:latest-gpu
 
 RUN apt-get update -qq \
  && apt-get install --no-install-recommends -y \
@@ -32,21 +31,23 @@ RUN apt-get update -qq \
 RUN pip install --upgrade pip
 
 # install Keras
-RUN pip3 install keras==2.2.4
-RUN pip3 install opencv-python
-RUN pip3 install progressbar2
-RUN pip3 install keras-resnet
-RUN pip3 install cython
-RUN pip3 install pycocotools
-RUN pip3 install pillow
-RUN python3 -m pip install matplotlib
-RUN pip install transforms3d
-RUN pip install pyquaternion
-RUN pip install Geometry
+RUN pip install keras==2.2.0
 
-RUN git clone https://github.com/sThalham/RetNetPose.git /RetNetPose
+RUN pip install git+https://www.github.com/keras-team/keras-contrib.git
+
+RUN pip install opencv-python
+RUN pip install pathlib
+
+# manually update numpy
+RUN pip --no-cache-dir install -U numpy==1.13.3
+
+# Clone the Detectron repository
+RUN git clone https://github.com/sThalham/cycleGAN.git /cycleGAN
+
+# Install Python dependencies
+# RUN pip3 install -r /pix2pix/requirements.txt
 
 # Go to pix2pix root
-WORKDIR /RetNetPose
+WORKDIR /cycleGAN
 
-#CMD ["python3", "RetinaNetPose/bin/train.py", "linemod", "data/linemod_3Dboxes"]
+#CMD ["python3", "pix2pix.py"]
