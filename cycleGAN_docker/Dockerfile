@@ -25,21 +25,23 @@ RUN apt-get update -qq \
     python3-yaml \
     python3-pydot \
     python3-tk \
+    tmux \
+    vim \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --upgrade pip
+RUN pip3 install --upgrade pip
 
 # install Keras
-RUN pip install keras==2.2.0
+RUN pip3 install keras==2.2.0
 
-RUN pip install git+https://www.github.com/keras-team/keras-contrib.git
+RUN pip3 install git+https://www.github.com/keras-team/keras-contrib.git
 
-RUN pip install opencv-python
-RUN pip install pathlib
+RUN pip3 install opencv-python
+RUN pip3 install pathlib
 
 # manually update numpy
-RUN pip --no-cache-dir install -U numpy==1.13.3
+RUN pip3 --no-cache-dir install -U numpy==1.13.3
 
 # Clone the Detectron repository
 RUN git clone https://github.com/sThalham/cycleGAN.git /cycleGAN
