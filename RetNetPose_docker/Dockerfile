@@ -26,23 +26,31 @@ RUN apt-get update -qq \
     python3-yaml \
     python3-pydot \
     python3-tk \
+    libgl1-mesa-glx \
+    vim \
+    tmux \
+    libgl1-mesa-glx \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip
 
 # install Keras
-RUN pip3 install keras==2.2.4
-RUN pip3 install opencv-python
+RUN pip3 install keras==2.2.5
+RUN pip3 install opencv-python==3.4.0.14
 RUN pip3 install progressbar2
 RUN pip3 install keras-resnet
 RUN pip3 install cython
 RUN pip3 install pycocotools
 RUN pip3 install pillow
 RUN python3 -m pip install matplotlib
-RUN pip install transforms3d
-RUN pip install pyquaternion
-RUN pip install Geometry
+RUN pip3 install transforms3d
+RUN pip3 install pyquaternion
+RUN pip3 install Geometry
+RUN pip3 install pygeometry
+RUN pip3 install open3d-python
+RUN pip3 install glumpy
+RUN pip3 install PyOpenGL
 
 RUN git clone https://github.com/sThalham/RetNetPose.git /RetNetPose
 
