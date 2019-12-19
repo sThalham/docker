@@ -30,6 +30,7 @@ RUN apt-get update -qq \
     python3-tk \
     tmux \
     vim \
+    libgl1-mesa-glx\
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
@@ -37,7 +38,7 @@ RUN pip install --upgrade pip
 
 # install Keras
 RUN pip3 install keras==2.2.5
-RUN pip3 install opencv-python==3.4.7.28
+RUN pip3 install opencv-python==3.4.0.14
 RUN pip3 install progressbar2
 RUN pip3 install keras-resnet
 RUN pip3 install cython
@@ -48,6 +49,8 @@ RUN pip3 install transforms3d
 RUN pip3 install pyquaternion
 RUN pip3 install Geometry
 RUN pip3 install glumpy
+RUN pip3 install open3d-python
+RUN pip3 install pygeometry
 RUN pip3 install PyOpenGL
 
 RUN git clone https://github.com/sThalham/RGBDPose.git /RGBDPose
