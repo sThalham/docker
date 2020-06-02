@@ -1,6 +1,6 @@
 # tensorflow
 #FROM tensorflow/tensorflow:latest-gpu-py3
-FROM tensorflow/tensorflow:1.9.0-gpu-py3
+FROM tensorflow/tensorflow:2.3.0-gpu-py3
 
 RUN apt-get update -qq \
  && apt-get install --no-install-recommends -y \
@@ -36,7 +36,7 @@ RUN apt-get update -qq \
 RUN pip install --upgrade pip
 
 # install Keras
-RUN pip3 install keras==2.2.5
+RUN pip3 install keras
 RUN pip3 install opencv-python==3.4.0.14
 RUN pip3 install progressbar2
 RUN pip3 install keras-resnet
@@ -51,11 +51,12 @@ RUN pip3 install pygeometry
 RUN pip3 install open3d-python
 RUN pip3 install glumpy
 RUN pip3 install PyOpenGL
+RUN pip3 install imgaug
 
-RUN git clone https://github.com/sThalham/RetNetPose.git /RetNetPose
+RUN git clone https://github.com/sThalham/SyDPose.git /SyDPose
 
 # Go to pix2pix root
-WORKDIR /RetNetPose
+WORKDIR /SyDPose
 
 #RUN git checkout 00de3d7c5871ad190be5d0407c7ef89ba44c88a8
 
