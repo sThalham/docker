@@ -1,6 +1,6 @@
 # tensorflow
 #FROM tensorflow/tensorflow:latest-gpu-py3
-FROM tensorflow/tensorflow:1.9.0-gpu-py3
+FROM tensorflow/tensorflow:2.1.1-gpu
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -37,7 +37,7 @@ RUN apt-get update -qq \
 RUN pip install --upgrade pip
 
 # install Keras
-RUN pip3 install keras==2.2.5
+RUN pip3 install keras==2.3.1
 RUN pip3 install opencv-python==3.4.0.14
 RUN pip3 install progressbar2
 RUN pip3 install keras-resnet
@@ -52,6 +52,7 @@ RUN pip3 install glumpy
 RUN pip3 install open3d-python
 RUN pip3 install pygeometry
 RUN pip3 install PyOpenGL
+RUN pip3 install imgaug
 
 RUN git clone https://github.com/sThalham/DoublePose.git /DoublePose
 
