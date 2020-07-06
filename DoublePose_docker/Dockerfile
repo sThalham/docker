@@ -53,6 +53,7 @@ RUN pip3 install open3d-python
 RUN pip3 install pygeometry
 RUN pip3 install PyOpenGL
 RUN pip3 install imgaug
+RUN pip3 install pyfastnoisesimd
 
 RUN git clone https://github.com/sThalham/DoublePose.git /DoublePose
 
