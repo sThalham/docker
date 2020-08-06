@@ -1,6 +1,8 @@
 # tensorflow
 #FROM tensorflow/tensorflow:latest-gpu-py3
-FROM tensorflow/tensorflow:2.3.0-gpu-py3
+FROM tensorflow/tensorflow:2.1.1-gpu
+
+ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update -qq \
  && apt-get install --no-install-recommends -y \
@@ -52,6 +54,7 @@ RUN pip3 install open3d-python
 RUN pip3 install glumpy
 RUN pip3 install PyOpenGL
 RUN pip3 install imgaug
+RUN pip3 install pyfastnoisesimd
 
 RUN git clone https://github.com/sThalham/SyDPose.git /SyDPose
 
