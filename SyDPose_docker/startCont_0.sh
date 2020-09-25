@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo nvidia-docker build --no-cache -t sydpose_gpu .
-thispid=$(sudo -E docker run --gpus all --network=host --name=retnetpose_gpu -t -d -v ~/ycbv_train:/SyDPose/data sydpose_gpu)
+sudo nvidia-docker build --no-cache -t sydpose_gpu_0 .
+thispid=$(sudo -E NV_GPU=0 nvidia-docker run --network=host --name=sydpose_gpu_0 -t -d -v ~/ycbv_train:/SyDPose/data sydpose_gpu_0)
 
 #sudo nvidia-docker exec -it $thispid bash
 

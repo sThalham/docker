@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo nvidia-docker build --no-cache -t retnetpose_gpu1 .
-thispid=$(sudo -E NV_GPU=1 nvidia-docker run --network=host --name=retnetpose_titan -t -d -v ~/linemod_RGBD:/RetNetPose/data -v ~/val_linemod_RGBD:/RetNetPose/val retnetpose_gpu1)
+sudo nvidia-docker build --no-cache -t sydpose_gpu .
+thispid=$(sudo -E NV_GPU=1 nvidia-docker run --network=host --name=sydpose_gpu -t -d -v ~/ycbv_train:/SyDPose/data sydpose_gpu)
 
 #sudo nvidia-docker exec -it $thispid bash
 
